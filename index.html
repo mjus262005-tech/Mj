@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Can I Court You?</title>
+<style>body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(#ffd6e7,#fff);font-family:sans-serif;overflow:hidden}h1{color:#d63384}.f{position:fixed;font-size:32px;animation:f 8s linear infinite}@keyframes f{from{transform:translateY(100vh)}to{transform:translateY(-20vh)}}button{padding:14px 24px;margin:10px;font-size:20px;border-radius:10px}</style></head><body>
+<div><h1>🌸 Can I Court You? 🌸</h1><button onclick="location='letter.html'">YES 💖</button><button id=no>NO 💔</button></div>
+<script>
+for(let i=0;i<20;i++){let s=document.createElement('div');s.className='f';s.textContent='🌸';s.style.left=Math.random()*100+'vw';s.style.animationDelay=(Math.random()*8)+'s';document.body.appendChild(s);}
+const b=no;
+function move(){b.style.position='fixed';b.style.left=Math.random()*(innerWidth-100)+'px';b.style.top=Math.random()*(innerHeight-50)+'px';}
+['mouseenter','touchstart'].forEach(e=>b.addEventListener(e,move));
+document.addEventListener('mousemove',e=>{let r=b.getBoundingClientRect();let dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);if(Math.hypot(dx,dy)<120)move();});
+</script></body></html>
